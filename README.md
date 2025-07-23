@@ -1,73 +1,193 @@
-# Welcome to your Lovable project
+# Tanzania Adventure Landing
 
-## Project info
+A beautiful, responsive single-page application for Serengeti Wonders Tours built with pure Laravel, HTML, CSS, and JavaScript. This project showcases Tanzania's premier safari destinations, services, and cultural experiences.
 
-**URL**: https://lovable.dev/projects/c064bf05-37c4-4615-825c-6c75d718e379
+## 🦁 Features
 
-## How can I edit this code?
+- **Single Page Application**: Smooth scrolling navigation between sections
+- **Responsive Design**: Mobile-first approach with beautiful Safari-themed styling
+- **Dynamic Content**: Database-driven destinations, services, and testimonials
+- **Interactive Contact Form**: AJAX-powered form submission with validation
+- **Parallax Effects**: Engaging visual effects and animations
+- **Local Expertise**: Authentic Tanzanian safari experience showcase
 
-There are several ways of editing your application.
+## 🗺️ Sections
 
-**Use Lovable**
+1. **Hero Section**: Stunning safari imagery with call-to-action
+2. **About**: Company story and statistics
+3. **Destinations**: Serengeti, Ngorongoro, Kilimanjaro, and Zanzibar
+4. **Services**: Game drives, cultural tours, transfers, and mountain climbing
+5. **Why Choose Us**: Unique value propositions
+6. **Testimonials**: Customer reviews and experiences
+7. **Contact**: Contact form and company information
+8. **Footer**: Additional links and newsletter signup
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c064bf05-37c4-4615-825c-6c75d718e379) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Backend**: Laravel 12.21.0 (PHP 8.4)
+- **Database**: SQLite (easily configurable for MySQL/PostgreSQL)
+- **Frontend**: Pure HTML5, CSS3, and vanilla JavaScript
+- **Icons**: Lucide Icons
+- **Fonts**: Google Fonts (Playfair Display, Inter)
+- **Styling**: Custom CSS with Safari-themed color palette
 
-**Use your preferred IDE**
+## 🚀 Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- PHP 8.4 or higher
+- Composer
+- SQLite extension for PHP
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Setup Instructions
 
-Follow these steps:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/George-Raymond/tanzania-adventure-landing1.git
+   cd tanzania-adventure-landing1
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Install dependencies**
+   ```bash
+   composer install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Database setup**
+   ```bash
+   touch database/database.sqlite
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+5. **Start the development server**
+   ```bash
+   php artisan serve
+   ```
+
+6. **Visit the application**
+   Open your browser and navigate to `http://localhost:8000`
+
+## 📊 Database Structure
+
+### Destinations
+- Serengeti National Park
+- Ngorongoro Crater
+- Mount Kilimanjaro
+- Zanzibar Island
+
+### Services
+- Game Drives
+- Cultural Tours
+- Airport Transfers
+- Mountain Climbing
+
+### Testimonials
+- Customer reviews with ratings
+- Profile images and country information
+
+### Contact Submissions
+- Form submissions with validation
+- Email notifications (configurable)
+
+## 🎨 Design System
+
+### Color Palette (Safari Theme)
+- **Primary**: Sunset Orange (`hsl(25, 95%, 53%)`)
+- **Secondary**: Acacia Brown (`hsl(30, 25%, 85%)`)
+- **Accent**: Kilimanjaro Blue (`hsl(200, 50%, 40%)`)
+- **Safari Gold**: `hsl(45, 85%, 65%)`
+- **Earth Brown**: `hsl(30, 40%, 30%)`
+
+### Typography
+- **Headings**: Playfair Display (Serif)
+- **Body**: Inter (Sans-serif)
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🔧 Configuration
+
+### Database Configuration
+The application uses SQLite by default. To use MySQL:
+
+1. Update `.env` file:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=tanzania_adventure
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
+
+2. Run migrations:
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+### Email Configuration
+Configure email settings in `.env` for contact form notifications:
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=your-smtp-host
+MAIL_PORT=587
+MAIL_USERNAME=your-email
+MAIL_PASSWORD=your-password
 ```
 
-**Edit a file directly in GitHub**
+## 🌍 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Shared Hosting
+1. Upload files to public_html or web root
+2. Move contents of `public/` to the web root
+3. Update `index.php` to point to the correct Laravel bootstrap file
+4. Set up database and run migrations
 
-**Use GitHub Codespaces**
+### VPS/Cloud Hosting
+1. Set up web server (Apache/Nginx)
+2. Configure PHP and database
+3. Clone repository and install dependencies
+4. Set proper file permissions
+5. Configure environment variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🤝 Contributing
 
-## What technologies are used for this project?
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This project is built with:
+## 📝 License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is open-source and available under the [MIT License](LICENSE).
 
-## How can I deploy this project?
+## 📞 Contact
 
-Simply open [Lovable](https://lovable.dev/projects/c064bf05-37c4-4615-825c-6c75d718e379) and click on Share -> Publish.
+**Serengeti Wonders Tours**
+- Email: info@serengetiwonders.com
+- Phone: +255 123 456 789
+- Location: Arusha, Tanzania
+- Website: [Your Website URL]
 
-## Can I connect a custom domain to my Lovable project?
+## 🙏 Acknowledgments
 
-Yes, you can!
+- Safari images sourced from Tanzania Tourism Board
+- Icons by Lucide Icons
+- Fonts by Google Fonts
+- Inspiration from Tanzania's natural beauty
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Experience the Magic of Tanzania** 🇹🇿
+
+*Safaris • Mountains • Beaches • Culture*
