@@ -1,42 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system - Tanzanian Safari Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Safari Earthy Palette */
+    --background: 35 15% 97%;
+    --foreground: 25 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 35 20% 98%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 20% 98%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sunset Orange - Primary brand color */
+    --primary: 25 95% 53%;
+    --primary-foreground: 35 15% 97%;
+    --primary-glow: 30 100% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Acacia Tree Brown */
+    --secondary: 30 25% 85%;
+    --secondary-foreground: 25 35% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Savanna Grass */
+    --muted: 45 30% 92%;
+    --muted-foreground: 35 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Kilimanjaro Blue */
+    --accent: 200 50% 40%;
+    --accent-foreground: 35 15% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Warning Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 15% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 25 95% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Safari Colors */
+    --safari-gold: 45 95% 60%;
+    --safari-brown: 25 35% 25%;
+    --safari-green: 95 30% 35%;
+    --zanzibar-blue: 195 85% 45%;
+    --kilimanjaro-snow: 210 20% 95%;
+    
+    /* Gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)), hsl(var(--safari-gold)));
+    --gradient-safari: linear-gradient(180deg, hsl(var(--safari-brown)), hsl(var(--primary)));
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--zanzibar-blue)), hsl(var(--accent)));
+    --gradient-mountain: linear-gradient(180deg, hsl(var(--kilimanjaro-snow)), hsl(var(--accent)));
+    
+    /* Shadows with warm glow */
+    --shadow-warm: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+    --shadow-deep: 0 25px 50px -15px hsl(var(--safari-brown) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.6);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,42 +87,142 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Night Safari Theme */
+    --background: 25 25% 8%;
+    --foreground: 35 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 25% 10%;
+    --card-foreground: 35 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 25% 10%;
+    --popover-foreground: 35 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 25 25% 8%;
+    --primary-glow: 30 100% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 15% 20%;
+    --secondary-foreground: 35 15% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 15% 15%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 50% 50%;
+    --accent-foreground: 25 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 15% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 25 95% 53%;
+    
+    /* Dark theme custom colors */
+    --safari-gold: 45 95% 70%;
+    --safari-brown: 25 25% 15%;
+    --safari-green: 95 30% 45%;
+    --zanzibar-blue: 195 85% 55%;
+    --kilimanjaro-snow: 210 20% 85%;
+    
+    --sidebar-background: 25 25% 8%;
+    --sidebar-foreground: 35 15% 92%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 25 25% 8%;
+    --sidebar-accent: 25 15% 15%;
+    --sidebar-accent-foreground: 35 15% 92%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 25 95% 53%;
   }
+}
+
+@layer components {
+  /* Safari-themed animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .bg-gradient-safari {
+    background: var(--gradient-safari);
+  }
+  
+  .bg-gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .bg-gradient-mountain {
+    background: var(--gradient-mountain);
+  }
+  
+  /* Interactive elements */
+  .safari-card {
+    @apply bg-card border border-border/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-warm)] backdrop-blur-sm;
+  }
+  
+  .safari-button {
+    @apply bg-gradient-sunset text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)] active:scale-95;
+  }
+  
+  .safari-text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+  }
+  
+  /* Parallax container */
+  .parallax-container {
+    transform: translateZ(0);
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .parallax-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 20px hsl(var(--primary) / 0.5); }
+  100% { text-shadow: 0 0 30px hsl(var(--primary-glow) / 0.8), 0 0 40px hsl(var(--primary-glow) / 0.6); }
+}
+
+@keyframes slideUp {
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 @layer base {
