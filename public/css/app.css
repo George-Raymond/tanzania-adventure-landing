@@ -1,0 +1,70 @@
+/* Tanzania Adventure Landing - Laravel Version */
+/* Additional CSS for the application */
+
+body {
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(35 15% 97%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(25 95% 53%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(30 100% 65%);
+}
+
+/* Loading animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus states for accessibility */
+.safari-button:focus,
+.form-input:focus,
+.form-textarea:focus {
+    outline: 2px solid hsl(25 95% 53%);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .footer,
+    .safari-button {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 0%;
+        --primary: 25 100% 45%;
+        --border: 0 0% 50%;
+    }
+}
